@@ -1,0 +1,153 @@
+{
+  "best_model": "Gradient Boosting",
+  "features": [
+    "gender",
+    "subscription_type",
+    "region",
+    "device",
+    "payment_method",
+    "favorite_genre",
+    "age",
+    "watch_hours",
+    "last_login_days",
+    "monthly_fee",
+    "number_of_profiles",
+    "avg_watch_time_per_day"
+  ],
+  "excluded_features": [],
+  "train_rows": 4000,
+  "test_rows": 1000,
+  "overall_churn_rate": 0.503,
+  "models": {
+    "Logistic Regression": {
+      "accuracy": 0.887,
+      "precision": 0.875,
+      "recall": 0.904572564612326,
+      "f1": 0.8895405669599218,
+      "roc_auc": 0.9664787932365565,
+      "cv_auc_mean": 0.9665462617980027,
+      "cv_auc_std": 0.0027454732120163416
+    },
+    "Random Forest": {
+      "accuracy": 0.984,
+      "precision": 0.9860279441117764,
+      "recall": 0.9821073558648111,
+      "f1": 0.9840637450199203,
+      "roc_auc": 0.9978779236052499,
+      "cv_auc_mean": 0.9970217824966723,
+      "cv_auc_std": 0.00165823953677661
+    },
+    "Gradient Boosting": {
+      "accuracy": 0.988,
+      "precision": 0.9900199600798403,
+      "recall": 0.9860834990059643,
+      "f1": 0.9880478087649402,
+      "roc_auc": 0.9980519298694752,
+      "cv_auc_mean": 0.9989912184519802,
+      "cv_auc_std": 0.0004728062228123121
+    }
+  },
+  "feature_importance": {
+    "watch_hours": 0.09848194535003256,
+    "avg_watch_time_per_day": 0.09549703789336403,
+    "last_login_days": 0.07342024312875253,
+    "number_of_profiles": 0.0320735546479672,
+    "payment_method": 0.012347244500801912,
+    "subscription_type": 0.005472997027892945,
+    "monthly_fee": 0.005273789856434718,
+    "gender": 0.0,
+    "device": 0.0,
+    "region": 0.0,
+    "favorite_genre": 0.0,
+    "age": -9.520342732345366e-05
+  },
+  "leakage_check": {
+    "engagement_features": [
+      "watch_hours",
+      "avg_watch_time_per_day",
+      "last_login_days"
+    ],
+    "auc_without_engagement_features": 0.6279386057898084,
+    "single_feature_auc": {
+      "age": 0.5022774419879115,
+      "watch_hours": 0.8125389314015304,
+      "last_login_days": 0.7720640343052352,
+      "monthly_fee": 0.5804756171222164,
+      "number_of_profiles": 0.5897224300074803,
+      "avg_watch_time_per_day": 0.9236418111051998
+    },
+    "top_feature": "watch_hours",
+    "auc_with_top_feature": 0.9980519298694752,
+    "auc_without_top_feature": 0.9932697577112776,
+    "watch_hours_vs_avg_watch_time_corr": 0.37955625637709217
+  },
+  "categories": {
+    "gender": [
+      "Female",
+      "Male",
+      "Other"
+    ],
+    "subscription_type": [
+      "Basic",
+      "Premium",
+      "Standard"
+    ],
+    "region": [
+      "Africa",
+      "Asia",
+      "Europe",
+      "North America",
+      "Oceania",
+      "South America"
+    ],
+    "device": [
+      "Desktop",
+      "Laptop",
+      "Mobile",
+      "TV",
+      "Tablet"
+    ],
+    "payment_method": [
+      "Credit Card",
+      "Crypto",
+      "Debit Card",
+      "Gift Card",
+      "PayPal"
+    ],
+    "favorite_genre": [
+      "Action",
+      "Comedy",
+      "Documentary",
+      "Drama",
+      "Horror",
+      "Romance",
+      "Sci-Fi"
+    ]
+  },
+  "numeric_ranges": {
+    "age": [
+      18.0,
+      70.0
+    ],
+    "watch_hours": [
+      0.01,
+      110.4
+    ],
+    "last_login_days": [
+      0.0,
+      60.0
+    ],
+    "monthly_fee": [
+      8.99,
+      17.99
+    ],
+    "number_of_profiles": [
+      1.0,
+      5.0
+    ],
+    "avg_watch_time_per_day": [
+      0.0,
+      24.0
+    ]
+  }
+}
